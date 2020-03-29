@@ -50,7 +50,6 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
 
 
     private ArrayList<FutureData> futureDataArrayList=new ArrayList<>();
-//    private String[] days={"Sun","Mon","Tue","Wed","Thu","Fri","Sat"};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -106,10 +105,8 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onChanged(FutureTemp futureTemp) {
                 if (futureTemp != null && futureTemp.getList() != null && futureTemp.getList().length > 0) {
-//                    recyclerView.setVisibility(View.GONE);
                     scrollUpDownLayout.setVisibility(View.VISIBLE);
                     upArrow.setVisibility(View.VISIBLE);
-//                    downArrow.setVisibility(View.INVISIBLE);
                     executorService.execute(new Runnable() {
                         @Override
                         public void run() {
@@ -160,9 +157,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
                     0,
                     recyclerView.getHeight(),
                     0);
-//            animate.setDuration(500);
-////            animate.setFillAfter(true);
-////            recyclerView.startAnimation(animate);
+
 
         }
         else if(v.getId()==R.id.downArrow){
@@ -176,9 +171,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
                     0,
                     0,
                     recyclerView.getHeight());
-//            animate.setDuration(500);
-//            animate.setFillAfter(true);
-//            recyclerView.startAnimation(animate);
+
         }
         if(animate!=null) {
             animate.setDuration(500);
