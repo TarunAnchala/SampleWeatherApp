@@ -37,12 +37,6 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent=new Intent(MainActivity.this,WeatherActivity.class);
                     intent.putExtra("cityName",cityName);
                     startActivity(intent);
-//                    TempFragment tempFragment=new TempFragment();
-//                    FragmentManager fragmentManager=getSupportFragmentManager();
-//                    FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-//                    fragmentTransaction.replace(R.id.container,tempFragment,TempFragment.TAG);
-//                    fragmentTransaction.addToBackStack(TempFragment.TAG);
-//                    fragmentTransaction.commit();
                 }
                 else{
                     Toast.makeText(MainActivity.this, "Please enter valid city name", Toast.LENGTH_SHORT).show();
