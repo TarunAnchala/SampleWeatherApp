@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_bg"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/weatherText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="92dp"
+        android:fontFamily="cursive"
+        android:text="@string/weather"
+        android:textColor="@color/dark_white"
+        android:textSize="50sp" />
+
+    <ImageView
+        android:id="@+id/weatherIcon"
+        android:layout_width="60dp"
+        android:src="@drawable/weather"
+        android:layout_marginTop="28dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/weatherText"
+        android:layout_height="60dp"/>
+
+    <EditText
+        android:id="@+id/selectCityEditText"
+        android:layout_width="wrap_content"
+        android:hint="@string/enter_city_name"
+        android:textColorHint="@color/blue_bg"
+        android:background="@drawable/edit_text_bg"
+        android:textColor="@color/blue_bg"
+        android:padding="4dp"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/fetchWeatherButton"
+        android:layout_width="80dp"
+        android:background="@drawable/fetch_button_bg"
+        android:text="@string/click"
+        android:fontFamily="sans-serif"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/dark_white"
+        android:textStyle="bold"
+        android:layout_below="@id/selectCityEditText"
+        android:layout_height="30dp"/>
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>
+

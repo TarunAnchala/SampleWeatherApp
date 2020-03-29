@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_bg">
+
+    <ImageView
+        android:id="@+id/tempLogo"
+        android:layout_width="@dimen/temp_logo_width_height"
+        android:layout_height="@dimen/temp_logo_width_height"
+        android:layout_above="@id/cityName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/cityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/temperatureView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:textAllCaps="true"
+        android:textColor="@color/dark_white"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/temperatureView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/dark_white"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/todayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/today"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/temperatureView"
+        android:textColor="@color/dark_white"
+        android:textSize="25sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="#e74c3c"
+        android:visibility="gone" />
+
+
+    <RelativeLayout
+        android:id="@+id/scrollUpLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:background="@color/scroll_up_bg">
+
+        <ImageView
+            android:id="@+id/upArrow"
+            android:layout_width="@dimen/up_down_arrow_width_height"
+            android:layout_height="@dimen/up_down_arrow_width_height"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/up_arrow" />
+
+        <ImageView
+            android:id="@+id/downArrow"
+            android:layout_width="@dimen/up_down_arrow_width_height"
+            android:layout_height="@dimen/up_down_arrow_width_height"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/down_arrow"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:layout_below="@id/upArrow"
+             />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

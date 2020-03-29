@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="up_down_arrow_width_height">25dp</dimen>
+    <dimen name="temp_logo_width_height">85dp</dimen>
+</resources>
