@@ -12,11 +12,9 @@ public interface ApiInterface {
 
     String BASE_URL = "https://api.openweathermap.org/data/2.5/";
 
-    //    @GET("weather?q={cityName}&APPID={appID}")
     @GET("weather")
     Call<CityTemp> getWeatherDetails(@Query("q") String cityName, @Query("APPID") String appID);
 
-    //    Call<CityTemp> getWeatherDetails(@Path("cityName") String cityName,@Path("appID") String appID);
     @GET("forecast/daily")
     Call<FutureTemp> getFutureWeatherDetails(@Query("q") String cityName, @Query("cnt") String count, @Query("appid") String appID);
 
