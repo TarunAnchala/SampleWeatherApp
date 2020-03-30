@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.tarun.sampleweatherapp.data.ApiInterface;
 import com.tarun.sampleweatherapp.data.WeatherViewModel;
 import com.tarun.sampleweatherapp.pojo.FutureData;
 import com.tarun.sampleweatherapp.pojo.currentTemp.CityTemp;
@@ -47,6 +46,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
     private TextView todayText;
     private RelativeLayout scrollUpDownLayout;
     private ExecutorService executorService= Executors.newSingleThreadExecutor();
+    private TextView errorTextView;
 
 
     private ArrayList<FutureData> futureDataArrayList=new ArrayList<>();
@@ -64,6 +64,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
         upArrow=findViewById(R.id.upArrow);
         todayText=findViewById(R.id.todayText);
         downArrow=findViewById(R.id.downArrow);
+        errorTextView=findViewById(R.id.errorTextView);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE");
         Date date = new Date();
         FutureWeatherAdapter futureWeatherAdapter=new FutureWeatherAdapter(this);
@@ -96,6 +97,12 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
                         }
                         temperatureView.setText(Math.round(temperature) + "\u2103");
                     }
+                }
+                else{
+
+                    progressBar.setVisibility(View.GONE);
+                    errorTextView.setVisibility(View.VISIBLE);
+                    Log.e(TAG, "onChanged: inside else====" +errorTextView.getVisibility());
                 }
             }
         });
@@ -139,9 +146,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
         });
     }
 
-    public void handleAnimation(){
 
-    }
 
     @Override
     public void onClick(View v) {
@@ -152,7 +157,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
             recyclerView.setVisibility(View.VISIBLE);
             downArrow.setVisibility(View.VISIBLE);
             upArrow.setVisibility(View.INVISIBLE);
-             animate = new TranslateAnimation(
+            animate = new TranslateAnimation(
                     0,
                     0,
                     recyclerView.getHeight(),
@@ -165,8 +170,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
             recyclerView.setVisibility(View.GONE);
             downArrow.setVisibility(View.INVISIBLE);
             upArrow.setVisibility(View.VISIBLE);
-//            view.setVisibility(View.INVISIBLE);
-             animate = new TranslateAnimation(
+            animate = new TranslateAnimation(
                     0,
                     0,
                     0,
