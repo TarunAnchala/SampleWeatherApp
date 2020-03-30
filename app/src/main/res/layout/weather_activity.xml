@@ -24,6 +24,8 @@
         android:textSize="35sp"
         android:textStyle="bold" />
 
+
+
     <TextView
         android:id="@+id/temperatureView"
         android:layout_width="wrap_content"
@@ -86,10 +88,20 @@
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
             android:layout_below="@id/upArrow"
-             />
-
-
+            />
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/errorTextView"
+        android:text="Sorry,Weather not Available"
+        android:textSize="30sp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold"
+        android:textColor="@color/dark_white"
+        android:layout_height="wrap_content"/>
 
 
 </RelativeLayout>
