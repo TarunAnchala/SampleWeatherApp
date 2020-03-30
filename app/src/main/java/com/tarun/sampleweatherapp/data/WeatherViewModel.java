@@ -34,12 +34,11 @@ public class WeatherViewModel extends ViewModel {
         weatherDetailsCall.enqueue(new Callback<CityTemp>() {
             @Override
             public void onResponse(Call<CityTemp> call, Response<CityTemp> response) {
-                Log.e(TAG, "onResponse: called ====" + response.body());
-                if (response.isSuccessful() && response.body() != null && response.body().getMain() != null) {
-
-                    tempLiveData.setValue(response.body());
-
-                }
+                Log.e(TAG, "onResponse: called ====" + response.body()+"===="+response.isSuccessful());
+                //I am not checking whether response is successful or not to show Error text in activity
+//                if (response.isSuccessful()) {
+                tempLiveData.setValue(response.body());
+//                }
             }
 
             @Override
@@ -72,3 +71,13 @@ public class WeatherViewModel extends ViewModel {
         return futureTempLiveData;
     }
 }
+
+
+
+
+
+
+
+
+
+
